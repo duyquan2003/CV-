@@ -1,0 +1,262 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            background-color: #d3d3d3;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-top: 2px solid #007bff;
+            position: relative;
+            min-height: 300px;
+        }
+
+        img.logo {
+            width: 50px;
+            height: 50px;
+            align-self: flex-start;
+            border-radius: 30px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+
+        .footer-info, .footer-authors, .footer-job {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 20px;
+        }
+
+        /* Tăng kích thước chữ trong các phần tử */
+        .footer-info p {
+            font-size: 20px; /* Tăng kích thước chữ */
+        }
+
+        .footer-authors a {
+            text-decoration: none;
+            color: #808080;
+            font-size: 20px;  /* Đảm bảo kích thước chữ giống nhau */
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .footer-authors a:first-child {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .footer-job {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 0 20px;
+        }
+
+        .footer-job a {
+            text-decoration: none;
+            color: #808080;
+            font-size: 20px;  /* Đảm bảo kích thước chữ giống nhau */
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .footer-job a:first-child {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
+            margin-top: 60px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+        }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            background-color: #d3d3d3;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-top: 2px solid #007bff;
+            position: relative;
+            min-height: 300px;
+        }
+
+        img.logo {
+            width: 50px;
+            height: 50px;
+            align-self: flex-start;
+            border-radius: 30px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+
+        .footer-info, .footer-authors, .footer-job {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 20px;
+        }
+
+        /* Tăng kích thước chữ trong các phần tử */
+        .footer-info p {
+            font-size: 20px; /* Tăng kích thước chữ */
+        }
+
+        .footer-authors a {
+            text-decoration: none;
+            color: #808080;
+            font-size: 20px;  /* Đảm bảo kích thước chữ giống nhau */
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .footer-authors a:first-child {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .footer-job {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 0 20px;
+        }
+
+        .footer-job a {
+            text-decoration: none;
+            color: #808080;
+            font-size: 20px;  /* Đảm bảo kích thước chữ giống nhau */
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .footer-job a:first-child {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
+            margin-top: 60px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+        }
+    </style>
+    <body>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <img class="logo" src="imglogo.jpg" alt="Logo">
+    <div class="footer-content">
+        <div class="footer-info">
+            <p>WEBSITE THUỘC QUYỀN SỞ HỮU: Mô hình Figure - Shop mô hình anime giá rẻ</p>
+            <p>Địa Chỉ: 131 Thái Thịnh, Đống Đa, Hà Nội</p>
+            <p>Hotline: 01234.567.891 | Email: <a href="mailto:mohinhfigure@gmail.com">mohinhfigure@gmail.com</a></p>
+        </div>
+        
+        <div class="footer-authors">
+            <a><strong>TÊN THÀNH VIÊN</strong></a>
+            <a>Đào Tiến Đạt</a>
+            <a>Bùi Đức Thuận</a>
+            <a>Trần Thanh Tùng</a>
+            <a>Tống Duy Quân</a>
+            <a>Nguyễn Văn Nam</a>
+            <a>Phạm Minh Hoàn</a>
+            <a>Nguyễn Quang Anh</a>
+        </div>
+        
+        <div class="footer-job">
+            <a><strong>CÔNG VIỆC</strong></a>
+            <a>Đào Tiến Đạt</a>
+            <a>Bùi Đức Thuận</a>
+            <a>Trần Thanh Tùng</a>
+            <a>Tống Duy Quân</a>
+            <a>Nguyễn Văn Nam</a>
+            <a>Phạm Minh Hoàn</a>
+            <a>Nguyễn Quang Anh</a>
+        </div>
+    </div>
+    <hr style="border: 1px solid black; width:100%; margin-bottom: 50px; margin-top: 0px;">
+    <div class="social-links">
+        <strong>KẾT NỐI VỚI MÔ HÌNH FIGURE</strong><br>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    </body>

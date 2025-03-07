@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gfigure</title>
+    <link rel="stylesheet" href="duan.css">
+        <!-- link icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+</head>
+<body>
+  
+
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="index.php"><img src="img/logo.jpg" alt="Logo"></a>
+        </div>
+
+        <!-- Thanh tìm kiếm -->
+        <div class="search-bar">
+            <form action="search.php" method="GET">
+                <input type="text" name="query" placeholder="Tìm kiếm sản phẩm...">
+                <button type="submit">Tìm kiếm</button>
+               
+            </form>
+        </div>
+
+        <!-- Menu điều hướng -->
+        <div class="navigation">
+            <ul>
+                <ul>
+                    <div class="menu-items">
+                    <li><a href="index.php">Trang chủ</a></li>
+                    <div class="dropdown">
+                    <li><a href="categories.php">Danh mục</a></li>
+                    <div class="dropdown">
+                 
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <h3>Hàng Có Sẵn</h3>
+                                <a href="#">GamePrize Figure</a>
+                                <a href="#">Scale Figure</a>
+                                <a href="#">Nendoroid</a>
+                                <a href="#">Pop Up Parade</a>
+                                <a href="#">Figure Khác</a>
+                                <a href="#">NSFW</a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Hàng Đặt Trước</h3>
+                                <a href="#">Phát Hành 2024</a>
+                                <a href="#">Phát Hành 2025</a>
+                                <a href="#">Phát Hành 2026</a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h3>Goods / Toys</h3>
+                                <h3>Tủ / Hộp Trưng Bày</h3>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+                    <li><a href="contact.php">Liên Hệ</a></li>
+                    <li><a href="track-order.php">Tra cứu đơn hàng</a></li>
+                    <li><a href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+                    <li><a href="account.php"><i class="fas fa-user"></i></a></li>
+                </div>
+                </ul>
+            </ul>
+        </div>
+ 
+        </div>
+    </div>
+</header>
+<script>
+    let hideTimeout;
+  
+    document.querySelector('.dropdown').addEventListener('mouseover', function() {
+      clearTimeout(hideTimeout); // Xóa bộ đếm thời gian nếu có
+      document.querySelector('.dropdown-content').style.display = 'flex'; // Hiển thị dropdown
+    });
+  
+    document.querySelector('.dropdown').addEventListener('mouseleave', function() {
+      hideTimeout = setTimeout(function() {
+        document.querySelector('.dropdown-content').style.display = 'none'; // Ẩn dropdown sau 15 giây
+      }, 15000); // 9000 milliseconds = 15 giây
+    });
+  </script>
+</body>
+</html>
+
+</header>
+</body>
+</html>
