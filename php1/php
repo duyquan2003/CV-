@@ -1,0 +1,111 @@
+?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css\gd.css">
+</head>
+<body>
+    <div class="container">
+        <article class="DM">
+            <h1>Danh mục nổi bật</h1><br>
+            <div class="dsdanhmuc">
+                <?php
+                    function dbConnect($severname,$username,$password,$dbname){
+                        $connect = new mysqli($severname,$username,$password,$dbname);
+                        return $connect;    
+                    }
+                    $DB = dbConnect('localhost','root','','duannhom1');
+                    $hololive="SELECT * FROM danhmucsanpham where TenDanhMuc='Hololive'";
+                    $Hololive=mysqli_query($DB,$hololive);
+                    $yugioh="SELECT * FROM danhmucsanpham where TenDanhMuc='Yugioh'";
+                    $Yugioh=mysqli_query($DB,$yugioh);
+                    $fate="SELECT * FROM danhmucsanpham where TenDanhMuc='Fate'";
+                    $Fate=mysqli_query($DB,$fate);
+                    $row=mysqli_fetch_assoc($Hololive);  
+                    $row1=mysqli_fetch_assoc($Yugioh);  
+                    $row2=mysqli_fetch_assoc($Fate);  
+                ?>
+                <div class="danhmuc">
+                    <a href=""><img src="<?php echo $row['ImgDM']?>" alt=""></a><br>
+                    <span>Hololive</span>
+                </div>
+                <div class="danhmuc">
+                    <a href=""><img src="<?php echo $row1['ImgDM']?>" alt=""></a><br>
+                    <span>Yugioh</span>
+                </div>
+                <div class="danhmuc">
+                    <a href=""><img src="<?php echo $row2['ImgDM']?>" alt=""></a><br>
+                    <span>Fate</span>
+                </div>
+            </div>
+        </article>
+        <article class="dshang">
+            <?php
+            $hang ="SELECT * FROM loaihang";
+            $Hang = mysqli_query($DB,$hang);
+            while($rowHang=mysqli_fetch_assoc($Hang)){
+            ?>
+            <div class="hang"><a href=""><img src="<?php echo $rowHang['ImgLoaiHang']?>" alt=""></a></div>
+            <?php
+            $_SESSION=$rowHang['IDLoaiHang'];
+            }
+            ?>
+        </article>
+        <article class="MH">
+            <h2><a href="">Figure</a></h2>
+            <div class="ds">
+                <?php
+                $figure="SELECT IDSanPham,TenSp,image,Gia FROM sanpham WHERE IDLoaiSp='LSP1'";
+                $FG= mysqli_query($DB,$figure);
+                $i=1;
+                while($rowFG=mysqli_fetch_assoc($FG)){
+                    if($i<=5){
+                ?>
+                <div class="sp">
+                    <a href=""><img src="<?php echo $rowFG['image']?>" alt=""></a><br>
+                    <a href=""><?php echo $rowFG['TenSp']?></a><br>
+                    <span><?php echo $rowFG['Gia']?> <u>đ</u></span>
+                </div>
+                <?php
+                    $_SESSION=$rowFG['IDSanPham'];
+                    $i++;
+                    }else{
+                        break;
+                    }
+                }
+                ?>
+            </div>
+        </article>
+        <article class="MH">
+            <h2><a href="">Gundam</a></h2>
+                <div class="ds">
+                    <?php
+                    $figure="SELECT IDSanPham,TenSp,image,Gia FROM sanpham WHERE IDLoaiSp='LSP2'";
+                    $FG= mysqli_query($DB,$figure);
+                    $i=1;
+                    while($rowFG=mysqli_fetch_assoc($FG)){
+                        if($i<=5){
+                    ?>
+                    <div class="sp">
+                        <a href=""><img src="<?php echo $rowFG['image']?>" alt=""></a><br>
+                        <a href=""><?php echo $rowFG['TenSp']?></a><br>
+                        <span><?php echo $rowFG['Gia']?> <u>đ</u></span>
+                    </div>
+                    <?php
+                        $_SESSION=$rowFG['IDSanPham'];
+                        $i++;
+                        }else{
+                            break;
+                        }
+                    }
+                    ?>
+                </div>
+        </article>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(243, 240, 240);
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: rgb(114, 132, 168);
+}
+.container{
+    padding: 2px;
+    background-color: white;
+    max-width: 80%;
+    margin: auto;
+}
+.TC{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.anh{
+    width: 100%;
+}
+.giohang button{
+    margin: 20px;
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+    border-radius: 7px;
+}
+table{
+    margin: 20px;
+    width: 40%;
+    padding: 10px;
+    border: 2px solid;
+    border-collapse: collapse;
+}
+th,td{
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    border: 2px solid;
+    border-collapse: collapse;
+}
+td input{
+    width: 100%;
+}
+.Thanhtoan{
+    display: inline-block;
+    margin: 20px;
+    margin-left: 20%;
+}
+.tongtien{
+    width: 300px;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+}
+.Thanhtoan button{
+    
+}
+.DM{
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px black;
+    margin: 15px;
+    padding: 10px;
+}
+.dsdanhmuc{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.danhmuc{
+    text-align: center;
+}
+.danhmuc img{
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+}
+.dshang{
+    margin: 15px 0px;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+.hang{
+    margin: 5px;
+}
+.hang img{
+    border-radius: 10px;
+    width: 100%;
+}
+.MH{
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px black;
+    margin: 15px;
+    padding: 10px;
+}
+.ds{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sp{
+    width: 20%;
+    height: 100%;
+    margin: 5px;
+    text-align: center;
+}
+.sp img{
+    border-radius: 10px;
+    width: 160px;
+    height: 200px;
+}
+.sp span{
+    color: green;
+}

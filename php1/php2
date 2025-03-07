@@ -1,0 +1,96 @@
+<?php
+session_start();
+if(isset($_POST['submit'])){ 
+                foreach($_POST['SL'] as $key => $val) { 
+                    if($val==0) { 
+                        header(); 
+                    }else{ 
+                        $_SESSION['sl']=$val;
+                        header("location:cart.php");
+                    } 
+                }           
+            }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css\gd.css">
+</head>
+<body>
+    <div class="container">
+        <div class="TC">
+            <form class="giohang" action="" method="post">
+            <table >
+                    <tr>
+                        <th><span>ID</span></th>
+                        <th><span>Ảnh đại diện</span></th>
+                        <th><span>Tên sản phẩm</span></th>
+                        <th><span>Giá</span></th>
+                        <th><span>Số lượng</span></th>
+                        <th><span>Thành tiền</span></th>
+                        <th><span>Hành động</span></th>
+                    </tr>
+                    <?php
+                    function dbConnect($severname,$username,$password,$dbname){
+                        $connect = new mysqli($severname,$username,$password,$dbname);
+                        return $connect;    
+                    }
+                    $DB = dbConnect('localhost','root','','duannhom1');
+                    $sql="SELECT sanpham.IDSanPham as ID,sanpham.image as image,sanpham.TenSP as Ten,sanpham.Gia as Gia,
+                    chitiethoadon.SL as SL,chitiethoadon.ThanhTien as ThanhTien,chitiethoadon.MaHD as MaHD 
+                    FROM chitiethoadon,sanpham WHERE chitiethoadon.IDSanPham =  sanpham.IDSanPham"; 
+                    $query=mysqli_query($DB,$sql); 
+                    while ($row=mysqli_fetch_assoc($query)){
+                        if(isset($_SESSION['sl'])){
+                            $SL=$_SESSION['sl'];
+                        }else{
+                            $SL=$row['SL'];
+                        }
+                        $idhd =$row['MaHD'];
+                        $idsp= $row['ID'];
+                        $search2="SELECT * FROM sanpham WHERE IDSanPham='$idsp'";
+                        $run2=mysqli_query($DB,$search2);
+                        $cot2=mysqli_fetch_assoc($run2);
+                        $tt=$SL*$cot2['Gia'];
+                        $update="UPDATE chitiethoadon SET SL='$SL',ThanhTien='$tt' WHERE MaHD ='$idhd' and IDSanPham='$idsp'";
+                        $query2=mysqli_query($DB,$update);
+                    ?>
+                    <tr>
+                        <td><?php echo $row['ID'];?></td>
+                        <td class="khunganh"><img class="anh" src="<?php echo $row['image'];?>" alt=""></td>
+                        <td><?php echo $row['Ten'];?></td>
+                        <td><?php echo $row['Gia'];?></td>
+                        <td><input name="SL[<?php echo $row['ID']?>]" type="number" value="<?php echo $row['SL'];?>" ></td>
+                        <td><?php echo $row['ThanhTien'];?></td>
+                        <td><a href=""></a></td>
+                    </tr>
+                    <?php
+                        }    
+                    ?>
+                </table>
+                <button type="submit" name="submit">Cập nhật</button>
+            </form>
+            <div class="Thanhtoan">
+                <?php
+                $sql1="SELECT SUM(ThanhTien) as Tongtien FROM chitiethoadon ORDER BY ThanhTien";
+                $query1=mysqli_query($DB,$sql1);
+                while ($row1=mysqli_fetch_assoc($query1)){
+                ?>
+                <div class="tongtien">
+                    <span><strong>Tổng:  </strong></span>
+                    <span><strong><?php echo $row1['Tongtien'];?> <u>đ</u></strong></span><br>
+                </div>
+                <button >Thanh toán</button>
+                <?php
+                }
+                ?>
+            </div>
+            <?php
+            ?>
+        </div>
+    </div> 
+</body>
+</html>
