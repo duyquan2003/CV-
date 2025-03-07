@@ -1,97 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gfigure</title>
+    <title>Gfigure - Cửa hàng Figure</title>
     <link rel="stylesheet" href="duan.css">
-        <!-- link icon -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+ 
 </head>
 <body>
-  
+    
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.php"><img src="img/logo.jpg" alt="Logo"></a>
+            </div>
 
+            <div class="search-bar">
+                <form action="search.php" method="GET">
+                    <input type="text" name="query" placeholder="Tìm kiếm sản phẩm...">
+                    <button type="submit">Tìm kiếm</button>
+                </form>
+            </div>
 
-<header>
-    <div class="header-container">
-        <div class="logo">
-            <a href="index.php"><img src="img/logo.jpg" alt="Logo"></a>
-        </div>
-
-        <!-- Thanh tìm kiếm -->
-        <div class="search-bar">
-            <form action="search.php" method="GET">
-                <input type="text" name="query" placeholder="Tìm kiếm sản phẩm...">
-                <button type="submit">Tìm kiếm</button>
-               
-            </form>
-        </div>
-
-        <!-- Menu điều hướng -->
-        <div class="navigation">
-            <ul>
+            <nav class="navigation">
                 <ul>
-                    <div class="menu-items">
                     <li><a href="index.php">Trang chủ</a></li>
-                    <div class="dropdown">
-                    <li><a href="categories.php">Danh mục</a></li>
-                    <div class="dropdown">
-                 
-                        <div class="dropdown-content">
-                            <div class="dropdown-column">
-                                <h3>Hàng Có Sẵn</h3>
-                                <a href="#">GamePrize Figure</a>
-                                <a href="#">Scale Figure</a>
-                                <a href="#">Nendoroid</a>
-                                <a href="#">Pop Up Parade</a>
-                                <a href="#">Figure Khác</a>
-                                <a href="#">NSFW</a>
-                            </div>
-                            <div class="dropdown-column">
-                                <h3>Hàng Đặt Trước</h3>
-                                <a href="#">Phát Hành 2024</a>
-                                <a href="#">Phát Hành 2025</a>
-                                <a href="#">Phát Hành 2026</a>
-                            </div>
-                            <div class="dropdown-column">
-                                <h3>Goods / Toys</h3>
-                                <h3>Tủ / Hộp Trưng Bày</h3>
-                            </div>
-                        </div>
-                    </div>
-            
-                </div>
+                    <li class="dropdown">
+                        <a href="categories.php">Danh mục</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#">GamePrize Figure</a></li>
+                            <li><a href="#">Scale Figure</a></li>
+                            <li><a href="#">Nendoroid</a></li>
+                            <li><a href="#">Pop Up Parade</a></li>
+                            <li><a href="#">Figure Khác</a></li>
+                            <li><a href="#">NSFW</a></li>
+                            <li><a href="#">Hàng Đặt Trước</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.php">Liên Hệ</a></li>
                     <li><a href="track-order.php">Tra cứu đơn hàng</a></li>
-                    <li><a href="cart.php"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+                    <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="account.php"><i class="fas fa-user"></i></a></li>
-                </div>
                 </ul>
-            </ul>
+            </nav>
         </div>
- 
+    </header>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src="img/fate/Altria Pendragon/3.jpg" alt="Thumbnail 1" class="slide">
+            <img src="img/danhmuc/Hangcosan/Hatsune Miku/1.jpg" alt="Thumbnail 2" class="slide">
+            <img src="img/hololive/Gawr Gura/1.jpg" alt="Thumbnail 3" class="slide">
         </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
     </div>
-</header>
-<script>
-    let hideTimeout;
-  
-    document.querySelector('.dropdown').addEventListener('mouseover', function() {
-      clearTimeout(hideTimeout); // Xóa bộ đếm thời gian nếu có
-      document.querySelector('.dropdown-content').style.display = 'flex'; // Hiển thị dropdown
-    });
-  
-    document.querySelector('.dropdown').addEventListener('mouseleave', function() {
-      hideTimeout = setTimeout(function() {
-        document.querySelector('.dropdown-content').style.display = 'none'; // Ẩn dropdown sau 15 giây
-      }, 15000); // 9000 milliseconds = 15 giây
-    });
-  </script>
-</body>
-</html>
+    
+    
+    <main>
+        <section class="featured-products">
+            <h2>Sản phẩm nổi bật</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="img/fate/Altria Pendragon/3.jpg" alt="Figure 1">
+                    <h3>Saber</h3>
+                    <p>Giá: 1.500.000 VND</p>
+                    <p class="stock">Số lượng: <span>10</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/danhmuc/Hangcosan/Hatsune Miku/1.jpg" alt="Figure 2">
+                    <h3>Hatsune Miku</h3>
+                    <p>Giá: 1.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>5</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/Gundam/HG_Gundam/Gundam_HG_1144_MSM-07S_Z'Gok/1.jpg" alt="Figure 3">
+                    <h3>Gundam</h3>
+                    <p>Giá: 2.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>8</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/fate/Ereshkigal/1.jpg" alt="Figure 4">
+                    <h3>Ereshkigal</h3>
+                    <p>Giá: 3.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>4</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/danhmuc/Hangdattruoc/Dan Heng Nendoroid/4.jpg" alt="Figure 5">
+                    <h3>Dan Heng Nendoroid</h3>
+                    <p>Giá: 1.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>12</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/danhmuc/Hangdattruoc/Seto Kaiba Nen/4.jpg" alt="Figure 6">
+                    <h3>Seto Kaiba Nen</h3>
+                    <p>Giá: 5.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>3</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/fate/Melusine/1.jpg" alt="Figure 7">
+                    <h3>Melusine</h3>
+                    <p>Giá: 1.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>7</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+            </div> <!-- Đóng product-list cho "Sản phẩm nổi bật" -->
+    
+            <h2>Sản phẩm mới về</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="img/hsr/Fu Xuan/1.jpg" alt="Figure 8">
+                    <h3>Fu Xuan</h3>
+                    <p>Giá: 1.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>6</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/danhmuc/Hangmoive/Azur Lane/1.jpg" alt="Figure 9">
+                    <h3>Dark Magician Girl</h3>
+                    <p>Giá: 1.20.000 VND</p>
+                    <p class="stock">Số lượng: <span>6</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
 
-</header>
+                </div> <!-- Đóng product-list cho "Sản phẩm mới về" -->
+                <div class="product-item">
+                    <img src="img/danhmuc/Hangmoive/Elaina Nen/1.jpg" alt="Figure 9">
+                    <h3>Elaina Nen</h3>
+                    <p>Giá: 2.800.000 VND</p>
+                    <p class="stock">Số lượng: <span>6</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img//danhmuc/Hangmoive/Azur Lane/2.jpg alt="Figure 9">
+                    <h3>Azur Lane</h3>
+                    <p>Giá: 1.100.000 VND</p>
+                    <p class="stock">Số lượng: <span>6</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/danhmuc/Hangdattruoc/Blue Archive Nen/1.jpg" alt="Figure 9">
+                    <h3>Blue Archive Nen</h3>
+                    <p>Giá: 1.600.000 VND</p>
+                    <p class="stock">Số lượng: <span>6</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+                <div class="product-item">
+                    <img src="img/Gundam/HG_Gundam/Gundam_HG_1144_MSM-07S_Z'Gok/2.jpg" alt="Figure 9">
+                    <h3>Gundam_HG</h3>
+                    <p>Giá: 1.700.000 VND</p>
+                    <p class="stock">Số lượng: <span>6</span> sản phẩm</p>
+                    <button>Thêm vào giỏ</button>
+                </div>
+            </div> 
+        
+       
+        
+            </div> <!-- Đóng product-list cho "Sản phẩm mới về" -->
+        
+        </section>
+    </main>
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Gfigure. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('mouseover', function() {
+                this.querySelector('.dropdown-content').style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', function() {
+                this.querySelector('.dropdown-content').style.display = 'none';
+            });
+        });
+        let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+
+  
+    document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const sliderWrapper = document.querySelector(".slider-wrapper");
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    let sliderInterval = setInterval(nextSlide, 3000);
+
+    document.querySelector(".prev").addEventListener("click", function () {
+        clearInterval(sliderInterval);
+        prevSlide();
+        sliderInterval = setInterval(nextSlide, 3000);
+    });
+
+    document.querySelector(".next").addEventListener("click", function () {
+        clearInterval(sliderInterval);
+        nextSlide();
+        sliderInterval = setInterval(nextSlide, 3000);
+    });
+});
+
+
+
+
+    </script>
 </body>
 </html>
